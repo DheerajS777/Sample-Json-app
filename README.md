@@ -26,7 +26,7 @@ Once that's done, enter the name of your virtualenv in the Virtualenv section on
 
 Enter the path to your project folder in the Code section on the web tab, eg /home/"myusername"/Sample-Json-app in Source code and Working directory.
 
-Enter the virtualenv path in the virtualenv section of the web tab, eg/home/"mysername"/.virtualenvs/myenv
+Enter the virtualenv path in the virtualenv section of the web tab, eg/home/"myusername"/.virtualenvs/myenv
 ***4.) Edit the WSGI file:
 
 Click on the WSGI file link, and it will take you to an editor where you can change it.
