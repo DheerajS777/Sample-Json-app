@@ -31,17 +31,14 @@ Enter the virtualenv path in the virtualenv section of the web tab, eg/home/"mys
 
 Click on the WSGI file link, and it will take you to an editor where you can change it.
 
-Delete everything except the Django section and then uncomment that section. Your WSGI file should look something like this:
-
-... +++++++++++ DJANGO +++++++++++
+Delete everything except the Django section and then uncomment that section. Your WSGI file should look something like
+this:
 import os
 import sys
-
-path = '/home/myusername/mysite'
+path = '/home/myusername/Sample-Json-app'
 if path not in sys.path:
     sys.path.insert(0, path)
-
-os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'FullThrottleLabs.settings'
 
 
 from django.core.wsgi import get_wsgi_application
@@ -72,19 +69,7 @@ d.)Except __init__.py,clear all the migration files in all the apps(User,Activit
 **6.) Making the migrations on Bash Console.
 
 (myenv)Sample-Json-app $ python manage.py makemigrations
-...Operations to perform:
-  Apply all migrations: Activity, User, admin, auth, contenttypes, sessions
-Running migrations:
-  Applying Activity.0001_initial... OK
-  .....
-  ......
-(myenv)/Sample-Json-app $ python manage.py makemigrations
-Migrations for 'Activity':
-  Activity/migrations/0001_initial.py
-    - Create model Activity_Data
-Migrations for 'User':
-  User/migrations/0001_initial.py
-    - Create model UserModel
+(myenv)/Sample-Json-app $ python manage.py migrate
     
 **7.) Reload the Web App.
 
