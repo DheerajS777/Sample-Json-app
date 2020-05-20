@@ -78,12 +78,12 @@ WSGI_APPLICATION = 'FullThrottleLabs.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': 'UserData',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
-        'PORT': 3306,
+        
     }
 }
 
