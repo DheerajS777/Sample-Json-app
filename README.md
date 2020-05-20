@@ -11,43 +11,42 @@ $ git clone https://github.com/DheerajS777/Sample-Json-app.git
 
 $ mkvirtualenv myenv --python=/usr/bin/python3.6 
 (myenv)$ pip install django
-# or, if you have a requirements.txt:
+or, if you have a requirements.txt:
 (myenv)$ cd Sample-Json-app
 (myenv)/Sample-Json-app $ pip install -r requirements.txt
 
 
-# Click on the Files Tab and Upload file 'Test JSON.json' in the directory "/home/dheeraj321/"
+Click on the Files Tab and Upload file 'Test JSON.json' in the directory "/home/dheeraj321/"
 
 **3.)Create a Web app with Manual Config
 
 Head over to the Web tab and create a new web app, choosing the "Manual Configuration" option and the right version of Python (the same one you used to create your virtualenv).
-# Once that's done, enter the name of your virtualenv in the Virtualenv section on the web tab and click OK.
+
+Once that's done, enter the name of your virtualenv in the Virtualenv section on the web tab and click OK.
+
 Enter the path to your project folder in the Code section on the web tab, eg /home/"myusername"/Sample-Json-app in Source code and Working directory.
+
 Enter the virtualenv path in the virtualenv section of the web tab, eg/home/"mysername"/.virtualenvs/myenv
 ***4.) Edit the WSGI file:
 
 Click on the WSGI file link, and it will take you to an editor where you can change it.
+
 Delete everything except the Django section and then uncomment that section. Your WSGI file should look something like this:
 
-...# +++++++++++ DJANGO +++++++++++
-# To use your own Django app use code like this:
+... +++++++++++ DJANGO +++++++++++
 import os
 import sys
 
-# assuming your Django settings file is at '/home/myusername/mysite/mysite/settings.py'
 path = '/home/myusername/mysite'
 if path not in sys.path:
     sys.path.insert(0, path)
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 
-## Uncomment the lines below depending on your Django version
-###### then, for Django >=1.5:
+
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
-###### or, for older Django <=1.4
-#import django.core.handlers.wsgi
-#application = django.core.handlers.wsgi.WSGIHandler()
+
 
 Save the file, then go and hit the Reload button for your domain. (You'll find one at the top right of the wsgi file editor, or you can go back to the main web tab)
 
